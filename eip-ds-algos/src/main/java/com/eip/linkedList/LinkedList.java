@@ -1,81 +1,81 @@
 package com.eip.linkedList;
 
-public class LinkedList {
+public class LinkedList<T> {
 
-	LinkedListNode head = null;
+	public LinkedListNode<T> head = null;
 
-	public boolean addNodeAtStart(String data) {
-		LinkedListNode newNode = new LinkedListNode(data);
+	public boolean addNodeAtStart(T data) {
+		LinkedListNode<T> newNode = new LinkedListNode<T>(data);
 		if (head == null) {
 			head = newNode;
 			return true;
 		} else {
-			LinkedListNode temp = head;
+			LinkedListNode<T> temp = head;
 			head = newNode;
-			newNode.next = temp;
+			newNode.setNext(temp);
 			return true;
 		}
 	}
 
-	public boolean addNodeAtEnd(String data) {
-		LinkedListNode newNode = new LinkedListNode(data);
+	public boolean addNodeAtEnd(T data) {
+		LinkedListNode<T> newNode = new LinkedListNode<T>(data);
 		if (head == null) {
 			head = newNode;
 			return true;
 		} else {
-			LinkedListNode current = head;
+			LinkedListNode<T> current = head;
 			while (current != null) {
-				if (current.next == null) {
-					current.next = newNode;
+				if (current.getNext() == null) {
+					current.setNext(newNode);
 					return true;
 				}
-				current = current.next;
+				current = current.getNext();
 			}
 		}
 		return false;
 	}
 
-	public boolean addAtIndex(String data, int index) {
-		LinkedListNode current = head;
-		LinkedListNode newNode = new LinkedListNode(data);
+ public boolean addAtIndex(T data, int index) {
+		LinkedListNode<T> current = head;
+		LinkedListNode<T> newNode = new LinkedListNode<T>(data);
 		if (current == null) {
 			head = newNode;
 			return true;
 		} else {
 			while (current != null) {
 				if (index == 0) {
-					LinkedListNode temp = current.next;
-					current.next = newNode;
-					newNode.next = temp;
+					LinkedListNode<T> temp = current.getNext();
+					current.setNext(newNode);
+					newNode.setNext(temp);
 					return true;
 				}
-				current = current.next;
+				current = current.getNext();
 			}
 		}
 		return false;
-	}
+	} 
 
-	public String deleteAtStart() {
-		if (head != null && head.next != null) {
-			String value = head.data;
-			LinkedListNode current = head.next;
+	 public T deleteAtStart() {
+		if (head != null && head.getNext() != null) {
+			T value = head.getData();
+			LinkedListNode<T> current = head.getNext();
 			head = current;
 			return value;
 		}
 		return null;
 	}
 
-	public String deleteAtEnd() {
-		if (head != null && head.next != null) {
-			LinkedListNode current = head;
-			LinkedListNode prev = head;
+	public T deleteAtEnd() {
+		if (head != null && head.getNext() != null) {
+			LinkedListNode<T> current = head;
+			LinkedListNode<T> prev = head;
 			while (current != null) {
-				if (current.next == null) {
-					prev.next = null;
-					return current.data;
+				if (current.getNext() == null) {
+					prev.setNext(null);
+					return current.getData();
 				}
 				prev = current;
-				current = current.next;
+				current = current.getNext();
 			}
 		}
 		return null;
@@ -84,42 +84,28 @@ public class LinkedList {
 	public boolean deleteAtIndex(int index) {
 
 		if (head != null) {
-			LinkedListNode current = head;
-			LinkedListNode prev = head;
+			LinkedListNode<T> current = head;
+			LinkedListNode<T> prev = head;
 			while (current != null) {
 				if (index == 0) {
-					prev.next = current.next;
+					prev.setNext(current.getNext());
 					return true;
 				}
 				prev = current;
-				current = current.next;
+				current = current.getNext();
 				index--;
 			}
 		}
 		return false;
-	}
+	} 
 
 	public void printLinkedList() {
-		LinkedListNode current = head;
+		LinkedListNode<T> current = head;
 		while (current != null) {
-			System.out.print("-" + current.data + "-");
-			current = current.next;
+			System.out.print("-" + current.getData() + "-");
+			current = current.getNext();
 		}
 	}
 
-	class LinkedListNode {
-
-		public LinkedListNode(String data) {
-			this.data = data;
-		}
-
-		private String data;
-		private LinkedListNode next;
-
-		@Override
-		public String toString() {
-			return "LinkedListNode [data=" + data + ", next=" + next + "]";
-		}
-
-	}
+	
 }

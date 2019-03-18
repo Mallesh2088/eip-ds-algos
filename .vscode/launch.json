@@ -1,0 +1,60 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Tree",
+            "request": "launch",
+            "mainClass": "com.eip.tree.Tree",
+            "projectName": "eip-ds-algos"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - AddNumbers",
+            "request": "launch",
+            "mainClass": "com.eip.algos.AddNumbers",
+            "projectName": "eip-ds-algos"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - MaximumContaiguousSubArray",
+            "request": "launch",
+            "mainClass": "com.eip.arrys.MaximumContaiguousSubArray",
+            "projectName": "eip-ds-algos"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - BinarySearchClient",
+            "request": "launch",
+            "mainClass": "com.eip.arrys.BinarySearchClient",
+            "projectName": "eip-ds-algos"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - MergeSortClient",
+            "request": "launch",
+            "mainClass": "com.eip.sorting.MergeSortClient",
+            "projectName": "eip-ds-algos"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - App",
+            "request": "launch",
+            "mainClass": "com.eip.samples.App",
+            "projectName": "eip-ds-algos"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - BinarySearchTreeClient",
+            "request": "launch",
+            "mainClass": "com.eip.tree.BinarySearchTreeClient",
+            "projectName": "eip-ds-algos"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - LinkedListClient",
+            "request": "launch",
+            "mainClass": "com.eip.linkedList.LinkedListClient",
+            "projectName": "eip-ds-algos"
+        }
+    ]
+}
